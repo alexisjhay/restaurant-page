@@ -1,3 +1,6 @@
+import { createMenu } from "./menu.js";
+import { clearContent } from "../index.js";
+
 export function createHome(content) {
 	content.className = "";
 	content.classList.add("home");
@@ -36,6 +39,11 @@ export function createHome(content) {
 	const heroBtn = document.createElement("button");
 	heroBtn.classList.add("explore");
 	heroBtn.textContent = "Explore Menu";
+
+	heroBtn.addEventListener("click", () => {
+		clearContent();
+		createMenu(content);
+	});
 
 	heroText.appendChild(heroBtn);
 

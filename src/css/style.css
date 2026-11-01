@@ -11,6 +11,8 @@
 	--white: #fff;
 	--accent-color: rgb(244, 126, 83);
 	--accent-color-2: rgb(255, 240, 234);
+	--accent-color-3: rgb(242, 223, 215);
+	--font-gray: rgb(103, 103, 103);
 	--border-radius: 25px;
 	--transition: 0.1s ease;
 }
@@ -27,7 +29,7 @@ img {
 .container {
 	width: min(1500px, 90%);
 	margin: 0 auto;
-	height: 100vh;
+	min-height: 100vh;
 	display: grid;
 	grid-template-rows: auto 1fr auto;
 }
@@ -134,7 +136,7 @@ nav button:hover {
 
 .hero-text p {
 	font-size: 1.1rem;
-	color: rgb(103, 103, 103);
+	color: var(--font-gray);
 }
 
 .home h1 {
@@ -151,6 +153,71 @@ nav button:hover {
 	height: 600px;
 	background: url("../assets/hero-image.jpg") center / cover;
 	border-radius: var(--border-radius);
+}
+
+/* MENU */
+
+.menu {
+	padding: 1rem 3rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.menu-top {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.menu-sort button {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	margin-right: 1rem;
+}
+
+.menu-sort button:last-child {
+	margin-right: 0;
+}
+
+.menu-sort button:hover {
+	color: var(--accent-color);
+}
+
+.menu-item {
+	flex: 1;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
+	gap: 1rem;
+}
+
+.item {
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	gap: 1rem;
+	border: 1px solid rgb(225, 205, 196);
+	background-color: var(--accent-color-3);
+
+	border-radius: 10px;
+	padding: 2rem;
+}
+
+.item-name {
+	font-size: 1.1rem;
+	font-weight: bold;
+}
+
+.item-desc {
+	color: var(--font-gray);
+}
+
+.item-price {
+	color: rgb(137, 4, 4);
+	font-weight: bold;
 }
 
 /* FOOTER */
