@@ -30,4 +30,4 @@ export function clearContent() {
 
 // RUN ON PAGE LOAD
 
-// createHome(content);
+createHome(content);

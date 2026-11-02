@@ -155,33 +155,11 @@ nav button:hover {
 	animation: enter 0.9s ease-out;
 }
 
-@keyframes enter {
-	0% {
-		transform: translateX(-75px);
-		opacity: 0;
-	}
-	100% {
-		transform: translateX(0);
-		opacity: 1;
-	}
-}
-
 .hero-img {
 	height: 600px;
 	background: url("../assets/hero-image.jpg") center / cover;
 	border-radius: var(--border-radius);
 	animation: up 0.9s ease-out;
-}
-
-@keyframes up {
-	0% {
-		transform: translateY(-50px);
-		opacity: 0;
-	}
-	100% {
-		transform: translateY(0);
-		opacity: 1;
-	}
 }
 
 /* MENU */
@@ -236,15 +214,6 @@ nav button:hover {
 	animation: appear 1s ease-out;
 }
 
-@keyframes appear {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
-}
-
 .item-name {
 	font-size: 1.1rem;
 	font-weight: bold;
@@ -268,14 +237,25 @@ nav button:hover {
 	gap: 1rem;
 }
 
+.about > h1 {
+	animation: enter 1s ease-out;
+}
+
+.about > p {
+	animation: enter 1.3s ease-out;
+}
+
 .contact-container {
 	flex-grow: 1;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
-	padding: 2rem;
+	padding: 3rem 2rem;
 	border-radius: var(--border-radius);
 	background-color: var(--accent-color-3);
+	gap: 1rem;
+
+	animation: enter 1.3s ease-out;
 }
 
 .contact-container h3 {
@@ -330,4 +310,37 @@ footer {
 
 footer a {
 	color: #000;
+}
+
+/* ANIMATIONS  */
+
+@keyframes appear {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes up {
+	0% {
+		transform: translateY(-50px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes enter {
+	0% {
+		transform: translateX(-75px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
 }
