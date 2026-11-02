@@ -134,25 +134,51 @@ nav button:hover {
 	font-weight: 500;
 }
 
-.hero-text p {
-	font-size: 1.1rem;
-	color: var(--font-gray);
-}
-
 .home h1 {
 	font-size: 3rem;
 	line-height: 1.2;
+	animation: enter 0.5s ease-out;
+}
+
+.hero-text p {
+	font-size: 1.1rem;
+	color: var(--font-gray);
+	animation: enter 0.7s ease-out;
 }
 
 .explore {
 	height: 50px;
 	width: 200px;
+	animation: enter 0.9s ease-out;
+}
+
+@keyframes enter {
+	0% {
+		transform: translateX(-100px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
 }
 
 .hero-img {
 	height: 600px;
 	background: url("../assets/hero-image.jpg") center / cover;
 	border-radius: var(--border-radius);
+	animation: up 0.9s ease-out;
+}
+
+@keyframes up {
+	0% {
+		transform: translateY(-100px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
 }
 
 /* MENU */
