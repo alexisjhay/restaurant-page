@@ -11,7 +11,7 @@
 	--white: #fff;
 	--accent-color: rgb(244, 126, 83);
 	--accent-color-2: rgb(255, 240, 234);
-	--accent-color-3: rgb(242, 223, 215);
+	--accent-color-3: rgb(238, 223, 216);
 	--font-gray: rgb(103, 103, 103);
 	--border-radius: 25px;
 	--transition: 0.1s ease;
@@ -43,6 +43,9 @@ header {
 
 	align-items: center;
 	padding: 1.5rem 0;
+	position: sticky;
+	top: 0;
+	background-color: var(--accent-color-2);
 }
 
 .logo {
@@ -154,7 +157,7 @@ nav button:hover {
 
 @keyframes enter {
 	0% {
-		transform: translateX(-100px);
+		transform: translateX(-75px);
 		opacity: 0;
 	}
 	100% {
@@ -172,7 +175,7 @@ nav button:hover {
 
 @keyframes up {
 	0% {
-		transform: translateY(-100px);
+		transform: translateY(-50px);
 		opacity: 0;
 	}
 	100% {
@@ -225,11 +228,21 @@ nav button:hover {
 	display: grid;
 	grid-template-rows: auto 1fr auto;
 	gap: 1rem;
-	border: 1px solid rgb(225, 205, 196);
+	border: 2px solid rgb(225, 205, 196);
 	background-color: var(--accent-color-3);
 
 	border-radius: 10px;
 	padding: 2rem;
+	animation: appear 1s ease-out;
+}
+
+@keyframes appear {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
 .item-name {
@@ -244,6 +257,68 @@ nav button:hover {
 .item-price {
 	color: rgb(137, 4, 4);
 	font-weight: bold;
+}
+
+/* ABOUT */
+
+.about {
+	padding: 1rem 3rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.contact-container {
+	flex-grow: 1;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+	padding: 2rem;
+	border-radius: var(--border-radius);
+	background-color: var(--accent-color-3);
+}
+
+.contact-container h3 {
+	padding: 1rem 0;
+}
+
+.contact-container h3:first-child {
+	padding-top: 0;
+}
+
+.contact-us p {
+	color: var(--font-gray);
+}
+
+.message-us form {
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
+.message-us label {
+	color: var(--font-gray);
+}
+
+.message-us input,
+.message-us textarea {
+	padding: 0.5rem;
+	border: 1px solid #c1c1c1;
+	border-radius: 5px;
+}
+
+.message-us textarea {
+	margin-bottom: 1rem;
+}
+
+.message-us button {
+	background-color: var(--accent-color);
+	color: var(--white);
+	font-weight: 600;
+	padding: 0.5rem 0;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: var(--transition);
 }
 
 /* FOOTER */
