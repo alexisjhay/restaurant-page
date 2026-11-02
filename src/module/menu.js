@@ -104,7 +104,13 @@ function createMenuSortButton(menuTop, menuH1, menuItem) {
 	for (const category of buttons) {
 		const createButton = document.createElement("button");
 		createButton.classList.add(`${category}`);
-		createButton.textContent = category[0].toUpperCase() + category.slice(1);
+
+		const convert = category
+			.split("-")
+			.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+			.join(" ");
+
+		createButton.textContent = convert;
 
 		createButton.addEventListener("click", () => {
 			clearMenuItem();
@@ -112,7 +118,7 @@ function createMenuSortButton(menuTop, menuH1, menuItem) {
 				menuH1.textContent = "All Items";
 				allItems(menuItem);
 			} else {
-				menuH1.textContent = category[0].toUpperCase() + category.slice(1);
+				menuH1.textContent = convert;
 				sortDish(menuItem, category);
 			}
 		});
